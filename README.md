@@ -48,7 +48,69 @@ String s = " demo.vn   ";
  * contains(String anotherString)
  * Hàm kiểm tra một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
  * vd : s.contains(“d.vn”) trả về TRUE
- 
+* Hàm  so sánh String này với đối tượng Object khác
+``` 
+int compareTo(Object đối tượng cần so sánh)
+or
+int compareTo(String String để được so sánh)
+```
+ * trả về 0 tham số là một chuỗi cân bằng với chuỗi "theo từ điển"
+ * trả về một giá trị nhỏ hơn 0 nếu tham số là một chuỗi lớn hơn "theo từ điển"
+ * một giá trị lớn hơn 0 nếu tham số là một chuỗi "theo từ điển".
+* Hàm Cắt chuỗi
+```
+public String[] split(String regex, int limit)
+or
+public String[] split(String regex)
+regex -- Là Regular expression phân giới.
+limit -- Bao nhiêu chuỗi được trả về.
+Nó trả về một mảng các chuỗi được tính toán bằng việc chia chuỗi này xung quanh các so khớp của regular expression đã cho
+``` 
+ * code demo
+```
+ public class ViduSpit1{  
+public static void main(String args[]){  
+String s1="Vi du Split boi Vietjack.com";  
+String[] words=s1.split("\\s");//chia chuoi dua tren string phan cac nhau boi khoang trang (\\s) 
+for(String w:words){  
+System.out.println(w);  
+}  
+}}  
+```
+* So Sánh Chuổi 
+ * public boolean equals(Object đối tượng cần so sánh)
+ * public boolean equalsIgnoreCase(String đối tượng cần so sánh)  // không phân biệt chữ thường chữ hoa
+*  trả về một chuỗi mới mà là một chuỗi phụ của chuỗi này
+```
+public String substring(int beginIndex)
+or
+public String substring(int beginIndex, int endIndex)
+beginIndex -- Chỉ mục bắt đầu.
+endIndex -- Chỉ mục cuối.
+```
+code demo :
+```
+public class ViduSubString{  
+public static void main(String args[]){  
+String s1="HienTran";  
+System.out.println(s1.substring(2,4)); //tra ve in  
+System.out.println(s1.substring(2)); // ienTran
+}}  
+```
+* Hàm trả về giá trị Hash code cho đối tượng 
+ * trả về một mã hóa băm (hash code) cho chuỗi này
+ * public int hashCode()
+demo :
+```
+public class Test{
+   public static void main(String[] args) {
+		String string_Literal = "hien tran";
+		System.out.println("hash code " + string_Literal.hashCode());
+	}
+}
+kết quả :
+hash code 1940674593
+```
 Tham khảo Thêm : </br>
 ![java-memory-stack-heap](https://cloud.githubusercontent.com/assets/18228937/17819613/e6cf3eae-6672-11e6-8c01-06afae34b92c.jpg)
 
