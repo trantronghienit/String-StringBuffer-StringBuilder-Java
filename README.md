@@ -49,6 +49,9 @@ String s = " demo.vn   ";
  * Hàm kiểm tra một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
  * vd : s.contains(“d.vn”) trả về TRUE
  
+Tham khảo Thêm : </br>
+![java-memory-stack-heap](https://cloud.githubusercontent.com/assets/18228937/17819613/e6cf3eae-6672-11e6-8c01-06afae34b92c.jpg)
+
 -------------------------------------------------
 ## 4. String buffer & String builder.
 
