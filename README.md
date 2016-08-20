@@ -1,5 +1,7 @@
 # Tổng Quan Về String Trong Java
 
+![cay quan h string](https://cloud.githubusercontent.com/assets/18228937/17828846/396448e0-66c7-11e6-8962-29c022b2121f.png)
+
 ## 1. String Là Gì ?
 String là một dãy hoặc một mảng gồm các kí tự. __Kí tự cuối cùng là kí tự \0__(NULL trong bảng mã ASCII).
 
@@ -32,23 +34,44 @@ vd:
 
 ## 3. Một Số Phương Thức có sẳn trong Lớp String để sử lý chuổi:
 String s = " demo.vn   ";
-* Hàm Nối Chuỗi
+* Hàm __Nối Chuỗi__
  * concat(String chuoicannoi) Trả về một String mới có giá trị là: s + chuoicannoi
-* Hàm thay thế những chuỗi con bằng một chuỗi mới
-  * replace(String oldString, String newString)
-  * Ví dụ: kết quả của s.replace(“vn”, “com”) là “demo.com”
-*Hàm trả về kí tự tại một vị trí nào đó (vị trí index được truyền vào)
+* Hàm __thay thế__ những chuỗi con bằng một chuỗi mới
+  * 1. replace(String oldString, String newString)
+  * 2. replaceFirst(String regex, String replacement)
+  * 3. String replaceAll(String regex, String replacement)
+vidụ: 
+```
+ public static void main(String[] args) {
+	String string_Literal = "hien tran it at ";
+	// thay thế các kí tự là i thành o
+	System.out.println("kết quả: " + string_Literal.replace("i", "o"));
+	// thay thế các kí tự đầu tiên là en thành abc
+	System.out.println("kết quả: " + string_Literal.replaceFirst("en", "abc"));
+	System.out.println("kết quả: " + string_Literal.replace("en", "abc"));
+	// thay thế các kí tự it|at thành "+"
+	System.out.println("kết quả: " + string_Literal.replaceAll("it|at" , "+"));
+}
+Kết quả:
+
+kết quả: hoen tran ot at 
+kết quả: hiabc tran it at 
+kết quả: hiabc tran it at 
+kết quả: hien tran + + 
+
+```
+*Hàm __trả về kí tự__ tại một vị trí nào đó (vị trí index được truyền vào)
   * charAt(int index)
-* Hàm cắt bỏ khoảng trống thừa 2 đầu
+* Hàm __cắt bỏ__ khoảng trống thừa 2 đầu
   * trim():
-* Hàm lấy mã ASCII
+* Hàm __lấy mã ASCII__
  * codePointAt(int index)
  * vd : s.codePointAt(0) trả về 66 (mã ASCII của ‘B’ là 66)
-* Hàm kiểm tra một chuỗi có tồn tại trong chuỗi
+* Hàm __kiểm tra một chuỗi__ có tồn tại trong chuỗi
  * contains(String anotherString)
- * Hàm kiểm tra một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
+ * Hàm __kiểm tra__ một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
  * vd : s.contains(“d.vn”) trả về TRUE
-* Hàm  so sánh String này với đối tượng Object khác
+* Hàm  __so sánh__ String này với đối tượng Object khác
  * trả về 0 tham số là một chuỗi cân bằng với chuỗi "theo từ điển"
  * trả về một giá trị nhỏ hơn 0 nếu tham số là một chuỗi lớn hơn "theo từ điển"
  * một giá trị lớn hơn 0 nếu tham số là một chuỗi "theo từ điển". 
@@ -58,7 +81,7 @@ or
 int compareTo(String String để được so sánh)
 ```
 
-* Hàm Cắt chuỗi
+* Hàm __Cắt chuỗi__
 ```
 public String[] split(String regex, int limit)
 or
@@ -67,7 +90,7 @@ regex -- Là Regular expression phân giới.
 limit -- Bao nhiêu chuỗi được trả về.
 Nó trả về một mảng các chuỗi được tính toán bằng việc chia chuỗi này xung quanh các so khớp của regular expression đã cho
 ``` 
- * code demo
+code demo
 ```
  public class ViduSpit1{  
 public static void main(String args[]){  
@@ -78,10 +101,10 @@ System.out.println(w);
 }  
 }}  
 ```
-* So Sánh Chuổi 
+* Hàm __So Sánh Chuổi __
  * public boolean equals(Object đối tượng cần so sánh)
  * public boolean equalsIgnoreCase(String đối tượng cần so sánh)  // không phân biệt chữ thường chữ hoa
-*  trả về một chuỗi mới mà là một chuỗi phụ của chuỗi này
+* Hàm trả về một chuỗi mới mà là một chuỗi phụ của chuỗi này
 ```
 public String substring(int beginIndex)
 or
@@ -96,9 +119,12 @@ public static void main(String args[]){
 String s1="HienTran";  
 System.out.println(s1.substring(2,4)); //tra ve in  
 System.out.println(s1.substring(2)); // ienTran
-}}  
+}}
+kết quả :
+in 
+ienTran
 ```
-* Hàm trả về giá trị Hash code cho đối tượng 
+* Hàm trả về giá trị __Hash code__ cho đối tượng 
  * trả về một mã hóa băm (hash code) cho chuỗi này
  * public int hashCode()
 demo :
@@ -111,6 +137,27 @@ public class Test{
 }
 kết quả :
 hash code 1940674593
+```
+* Hàm __Chuyển chuỗi __này thành mảng ký tự.
+ * char[] toCharArray()
+* Hàm __Kiểm tra nếu chuỗi này bắt đầu__ với tiền tố quy định
+ * 1. boolean startsWith(String prefix)
+   * prefix : tiền tố cần kiểm tra
+ * 2. boolean startsWith(String prefix, int toffset)
+   * prefix : tiền tố cần kiểm tra
+   * toffset : bắt đầu một chỉ số xác định
+
+code demo:
+```
+public static void main(String[] args) {
+		String string_Literal = "hien tran";
+		System.out.println("kiem tra : " + string_Literal.startsWith("hi"));
+		System.out.println("kiem tra " + string_Literal.startsWith("h", 0));
+	}
+kết quả :
+kiem tra : true
+kiem tra true
+
 ```
 Tham khảo Thêm : </br>
 ![java-memory-stack-heap](https://cloud.githubusercontent.com/assets/18228937/17819613/e6cf3eae-6672-11e6-8c01-06afae34b92c.jpg)
@@ -131,5 +178,15 @@ hai lớp trên đều thuộc lọai mutable(có thể thay đổi được) Nh
 * StringBuilder thì ngược lại, không synchronized.__(không thích hợp với xử lý đa luồng)__, các phương thức của StringBuffer sẽ chạy chậm hơn so với StringBuilder. </br>
 ==> tuy theo tình huống mà sử dụng  StringBuffer và StringBuilder
  
-  
-  
+demo :
+```
+StringBuffer buffer = new StringBuffer("trua nay an gi ?");
+	buffer.append(" an com");
+	System.out.println("ket qua:"+ buffer);
+ket qua:trua nay an gi ? an com
+```
+
+### phương Thức
+có một số phương thức giống String , StringBuffer và StringBuilder giống nhau
+
+![phuong thuc thuong gap trong stringbuffer stringbuilder](https://cloud.githubusercontent.com/assets/18228937/17829121/8447473e-66ce-11e6-812c-af900167dab3.png)
