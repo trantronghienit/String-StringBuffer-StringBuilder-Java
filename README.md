@@ -49,14 +49,15 @@ String s = " demo.vn   ";
  * Hàm kiểm tra một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
  * vd : s.contains(“d.vn”) trả về TRUE
 * Hàm  so sánh String này với đối tượng Object khác
+ * trả về 0 tham số là một chuỗi cân bằng với chuỗi "theo từ điển"
+ * trả về một giá trị nhỏ hơn 0 nếu tham số là một chuỗi lớn hơn "theo từ điển"
+ * một giá trị lớn hơn 0 nếu tham số là một chuỗi "theo từ điển". 
 ``` 
 int compareTo(Object đối tượng cần so sánh)
 or
 int compareTo(String String để được so sánh)
 ```
- * trả về 0 tham số là một chuỗi cân bằng với chuỗi "theo từ điển"
- * trả về một giá trị nhỏ hơn 0 nếu tham số là một chuỗi lớn hơn "theo từ điển"
- * một giá trị lớn hơn 0 nếu tham số là một chuỗi "theo từ điển".
+
 * Hàm Cắt chuỗi
 ```
 public String[] split(String regex, int limit)
