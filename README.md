@@ -117,8 +117,19 @@ Tham khảo Thêm : </br>
 
 -------------------------------------------------
 ## 4. String buffer & String builder.
+Như ta đã biết đối tượng String là không thể thay đổi Nhưng String buffer & String builder __lại có thể thay đổi__
+* với trường hợp tham chiếu chính nó trong String 
+![proformance](https://cloud.githubusercontent.com/assets/18228937/17828766/46dab100-66c5-11e6-97bb-a5cbf34f5c1b.png)
+### tại sao dùng String buffer & String builder .
+* với bài toán hiệu suất như trên StringBuilder hoặc StringBuffer sẽ giúp bạn giải quyết vấn đề về hiệu suất.
 
+### * Tại sao vậy?
+hai lớp trên đều thuộc lọai mutable(có thể thay đổi được) Nhờ đặc tính này mà khi thay đổi các chuỗi trong những đối tượng này JVM __không phải tạo các đối tượng mới (đối tượng tạm)__ và vấn đề về performance.
 
+### vậy StringBuffer và String builder khác gì nhau ?
+* StringBuffer thuộc loại synchronized do đó các phương thức của nó đều là “thread safe” __(thích hợp với xử lý đa luồng – multi thread)__
+* StringBuilder thì ngược lại, không synchronized.__(không thích hợp với xử lý đa luồng)__, các phương thức của StringBuffer sẽ chạy chậm hơn so với StringBuilder. </br>
+==> tuy theo tình huống mà sử dụng  StringBuffer và StringBuilder
  
   
   
