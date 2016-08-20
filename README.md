@@ -62,15 +62,19 @@ kết quả: hien tran + +
 ```
 *Hàm __trả về kí tự__ tại một vị trí nào đó (vị trí index được truyền vào)
   * charAt(int index)
+ 
 * Hàm __cắt bỏ__ khoảng trống thừa 2 đầu
   * trim():
+
 * Hàm __lấy mã ASCII__
  * codePointAt(int index)
  * vd : s.codePointAt(0) trả về 66 (mã ASCII của ‘B’ là 66)
+ 
 * Hàm __kiểm tra một chuỗi__ có tồn tại trong chuỗi
  * contains(String anotherString)
  * Hàm __kiểm tra__ một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
  * vd : s.contains(“d.vn”) trả về TRUE
+
 * Hàm  __so sánh__ String này với đối tượng Object khác
  * trả về 0 tham số là một chuỗi cân bằng với chuỗi "theo từ điển"
  * trả về một giá trị nhỏ hơn 0 nếu tham số là một chuỗi lớn hơn "theo từ điển"
@@ -101,10 +105,11 @@ System.out.println(w);
 }  
 }}  
 ```
-* Hàm __So Sánh Chuổi __
+* Hàm __So Sánh Chuỗi__
  * public boolean equals(Object đối tượng cần so sánh)
  * public boolean equalsIgnoreCase(String đối tượng cần so sánh)  // không phân biệt chữ thường chữ hoa
-* Hàm trả về một chuỗi mới mà là một chuỗi phụ của chuỗi này
+
+* Hàm __trả về một chuỗi mới__ mà là một chuỗi phụ của chuỗi này
 ```
 public String substring(int beginIndex)
 or
