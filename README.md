@@ -179,8 +179,9 @@ Như ta đã biết đối tượng String là không thể thay đổi Nhưng S
 hai lớp trên đều thuộc lọai mutable(có thể thay đổi được) Nhờ đặc tính này mà khi thay đổi các chuỗi trong những đối tượng này JVM __không phải tạo các đối tượng mới (đối tượng tạm)__ và vấn đề về performance.
 
 ### vậy StringBuffer và String builder khác gì nhau ?
-* StringBuffer thuộc loại synchronized do đó các phương thức của nó đều là “thread safe” __(thích hợp với xử lý đa luồng – multi thread)__
-* StringBuilder thì ngược lại, không synchronized.__(không thích hợp với xử lý đa luồng)__, các phương thức của StringBuffer sẽ chạy chậm hơn so với StringBuilder. </br>
+* StringBuffer thuộc loại synchronized do đó các phương thức của nó đều là an toàn luồng "thread safe" Nghĩa là hai Thread không thể gọi đồng thời các phương thức của lớp StringBuffer __(thích hợp với xử lý đa luồng – multi thread).__
+
+* StringBuilder thì ngược lại, không synchronized hai Thread có thể gọi đồng thời các phương thức của lớp StringBuilder .__(không thích hợp với xử lý đa luồng)__, các phương thức của StringBuffer sẽ chạy chậm hơn so với StringBuilder. </br>
 ==> tuy theo tình huống mà sử dụng  StringBuffer và StringBuilder
  
 demo :
