@@ -151,6 +151,7 @@ hash code 1940674593
  * 2. boolean startsWith(String prefix, int toffset)
    * prefix : tiền tố cần kiểm tra
    * toffset : bắt đầu một chỉ số xác định
+   
 
 code demo:
 ```
@@ -164,6 +165,20 @@ kiem tra : true
 kiem tra true
 
 ```
+* Hàm Kiểm Trả xem có đúng với chuẩn định nghĩa không
+ * public boolean matches(String regex)
+   * regex : chuẩn định nghĩa
+```
+	String chuoi = "Tran Trong Hien";
+        System.out.println("" + chuoi.matches("(.*)Trong(.*)")); 
+	System.out.println("" + chuoi.matches("Trong")); 
+	
+	kết quả:
+	true
+	false
+```   
+
+
 Tham khảo Thêm : </br>
 ![java-memory-stack-heap](https://cloud.githubusercontent.com/assets/18228937/17819613/e6cf3eae-6672-11e6-8c01-06afae34b92c.jpg)
 
