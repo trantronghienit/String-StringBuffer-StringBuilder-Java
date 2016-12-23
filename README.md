@@ -177,7 +177,23 @@ kiem tra true
 	true
 	false
 ```   
-
+* Tìm Index(vị trí) của 1 kí tự
+ * int indexOf(String str)
+ * int indexOf(String str, int fromIndex)
+  * ví du:
+```
+                 0                   20
+ String chuoi = "Tran Trong Hien Dep Trai";
+        System.out.println("" + chuoi.indexOf(1)); 
+        System.out.println("" + chuoi.indexOf("T"));   
+        System.out.println("" + chuoi.indexOf("T" , 9));  // tìm "T" từ index thứ 9 trở đi 
+	
+	Kết quả :
+	-1
+	0
+	20
+	
+```
 
 Tham khảo Thêm : </br>
 ![java-memory-stack-heap](https://cloud.githubusercontent.com/assets/18228937/17819613/e6cf3eae-6672-11e6-8c01-06afae34b92c.jpg)
