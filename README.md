@@ -177,9 +177,10 @@ kiem tra true
 	true
 	false
 ```   
-* Tìm Index(vị trí) của 1 kí tự
+* ***Tìm Index(vị trí)*** của 1 kí tự 1 chuổi
  * int indexOf(String str)
  * int indexOf(String str, int fromIndex)
+ 	* trường hớp nếu tìm không thấy trả về -1 
   * ví du:
 ```
                  0                   20
@@ -192,6 +193,22 @@ kiem tra true
 	-1
 	0
 	20
+==============
+	String text = "0123hello9012hello8901hello7890";
+	String word = "hello";
+
+	System.out.println(text.indexOf(word)); // prints "4"
+	System.out.println(text.lastIndexOf(word)); // prints "22"
+
+	// tìm tất cả số lần xuất hiện bắt đầu tìm từ phía trước
+	for (int i = -1; (i = text.indexOf(word, i + 1)) != -1; ) {
+    		System.out.println(i);
+	} // prints "4", "13", "22"
+
+	// tìm tất cả số lần xuất hiện bắt đầu tìm từ phía sau
+	for (int i = text.length(); (i = text.lastIndexOf(word, i - 1)) != -1; ) {
+    		System.out.println(i);
+	} // prints "22", "13", "4"
 	
 ```
 
