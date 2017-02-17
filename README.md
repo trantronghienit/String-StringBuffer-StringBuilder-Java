@@ -282,8 +282,8 @@ hai lớp trên đều thuộc lọai mutable(có thể thay đổi được) Nh
 ### vậy StringBuffer và String builder khác gì nhau ?
 * StringBuffer thuộc loại synchronized do đó các phương thức của nó đều là an toàn luồng "thread safe" Nghĩa là hai Thread không thể gọi đồng thời các phương thức của lớp StringBuffer __(thích hợp với xử lý đa luồng – multi thread).__
 
-* StringBuilder thì ngược lại, không synchronized hai Thread có thể gọi đồng thời các phương thức của lớp StringBuilder .__(không thích hợp với xử lý đa luồng)__, các phương thức của StringBuffer sẽ chạy chậm hơn so với StringBuilder. </br>
-==> tuy theo tình huống mà sử dụng  StringBuffer và StringBuilder
+* StringBuilder thì ngược lại, non-synchronized hai Thread có thể gọi đồng thời các phương thức của lớp StringBuilder .__(không thích hợp với xử lý đa luồng)__, các phương thức của StringBuffer sẽ chạy chậm hơn so với StringBuilder. </br>
+==>vì StringBuilder thuộc loại đa luồng  nhưng non-synchronized nên sẽ nhanh hơn StringBuffer là loại synchronized tuy theo tình huống mà sử dụng  StringBuffer và StringBuilder cho đúng .
  
 demo :
 ```
