@@ -351,3 +351,83 @@ public static void main(String args[]) {
         System.out.println(sb.capacity());//đến đây là 70 
     }
 ```
+## StringTokenizer là gì </br>
+phân tách một chuỗi thành các phần tử token của nó.
+
+### Các phương thức của lớp StringTokenizer
+![image](https://cloud.githubusercontent.com/assets/18228937/23050987/33c065b2-f4f8-11e6-956b-7311d10b1f3b.png)
+
+demo: 
+```
+Dấu phân tách mặc định là 1 khoẳng trắng.
+
+    public static void main(String args[]) {
+        StringTokenizer st = new StringTokenizer("Toi ten la hientran");
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
+    }
+===============================
+Toi
+ten
+la
+hientran
+
+--------------------vd2---------------------
+
+public static void main(String args[]) {
+        StringTokenizer st = new StringTokenizer("Toi-ten-la-hientran", "-");
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
+    }
+==========
+Toi
+ten
+la
+hientran
+
+-------------------vd3----------------------
+
+    public static void main(String args[]) {
+        StringTokenizer st = new StringTokenizer("Toi-ten-,la-hientran", "-,", false);
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
+    }
+==========
+Toi
+ten
+la
+hientran
+
+---------------vd4----------------
+
+public static void main(String args[]) {
+        StringTokenizer st = new StringTokenizer("Toi-ten-,la-hientran", "-,", true);
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
+    }
+======
+Toi
+-
+ten
+-
+,
+la
+-
+hientran
+
+---------------vd5--------------
+
+public static void main(String args[]) {
+        StringTokenizer st = new StringTokenizer("Toi-ten-,la-hientran", "-,", true);
+ 
+        // in next token dựa trên dấu phân cách
+        System.out.println("Next token là : " + st.nextToken("-,")); 
+    }
+ ===========
+ Next token là : Toi 
+
+```
