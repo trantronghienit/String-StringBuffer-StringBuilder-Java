@@ -211,6 +211,54 @@ kiem tra true
 	} // prints "22", "13", "4"
 	
 ```
+* Hàm  join()  Nối chuổi bởi dấu phân tách (java 8) </br>
+vd: 
+```
+public static void main(String args[]) {
+        String joinString1 = String.join("-", "welcome", "to", "java");
+        System.out.println(joinString1);
+    }
+
+// =======================
+kết quả:
+welcome-to-java
+```
+
+* Hàm intern() có thể được sử dụng để trả về chuỗi từ Pool chứa hằng số chuỗi khi nó được tạo bởi từ khóa new
+vd: 
+```
+public static void main(String args[]) {
+        String s1 = new String("hello");
+        String s2 = "hello";
+        String s3 = s1.intern();//trả về chuỗi từ Pool
+        System.out.println(s1 == s2);//false vì reference là khác nhau
+        System.out.println(s2 == s3);//true vì reference là giống nhau 
+    }
+=====================
+kết quả:
+false
+true
+```
+* Hàm formart() trả về một chuỗi được format theo miền địa phương.
+vd 
+```
+ public static void main(String args[]) {
+        String name = "sonoo";
+        String sf1 = String.format("name is %s", name);
+        String sf2 = String.format("value is %f", 32.33434);
+        String sf3 = String.format("value is %32.12f", 32.33434);
+ 
+        System.out.println(sf1);
+        System.out.println(sf2);
+        System.out.println(sf3);
+    }
+====================
+kết quả:
+name is sonoo
+value is 32.334340
+value is                  32.334340000000
+```
+
 
 Tham khảo Thêm : </br>
 ![java-memory-stack-heap](https://cloud.githubusercontent.com/assets/18228937/17819613/e6cf3eae-6672-11e6-8c01-06afae34b92c.jpg)
@@ -218,10 +266,15 @@ Tham khảo Thêm : </br>
 -------------------------------------------------
 ## 4. String buffer & String builder.
 Như ta đã biết đối tượng String là không thể thay đổi Nhưng String buffer & String builder __lại có thể thay đổi__
+
 * với trường hợp tham chiếu chính nó trong String 
 ![proformance](https://cloud.githubusercontent.com/assets/18228937/17828766/46dab100-66c5-11e6-97bb-a5cbf34f5c1b.png)
+
 ### tại sao dùng String buffer & String builder .
-* với bài toán hiệu suất như trên StringBuilder hoặc StringBuffer sẽ giúp bạn giải quyết vấn đề về hiệu suất.
+* String khi mỗi lần nối thêm chuỗi nó tạo ra instance mới xử lý chậm và tốn nhiều bộ nhớ . với bài toán hiệu suất như trên StringBuilder hoặc StringBuffer sẽ giúp bạn giải quyết vấn đề về hiệu suất.
+
+### khi nào nên dùng ?
+* Khi bạn thực hiện nối nhiều chuỗi thì lớp StringBuffer xử lý nhanh và tốn ít bộ nhớ hơn.
 
 ### * Tại sao vậy?
 hai lớp trên đều thuộc lọai mutable(có thể thay đổi được) Nhờ đặc tính này mà khi thay đổi các chuỗi trong những đối tượng này JVM __không phải tạo các đối tượng mới (đối tượng tạm)__ và vấn đề về performance.
