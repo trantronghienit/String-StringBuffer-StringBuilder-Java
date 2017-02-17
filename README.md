@@ -297,3 +297,56 @@ ket qua:trua nay an gi ? an com
 có một số phương thức giống String , StringBuffer và StringBuilder giống nhau
 
 ![phuong thuc thuong gap trong stringbuffer stringbuilder](https://cloud.githubusercontent.com/assets/18228937/17829121/8447473e-66ce-11e6-812c-af900167dab3.png)
+
+* Hàm replace() ***thay thế*** chuỗi bằng chuỗi khác từ vị trị bắt đầu và kết thúc được quy định .
+```
+public static void main(String args[]) {
+        StringBuffer sb = new StringBuffer("Hello");
+        sb.replace(1, 3, "Java");
+        System.out.println(sb);//in 
+    }
+=========kết quả========
+HJavalo 
+```
+
+* Phương thức reverse() của lớp StringBuffer ***đảo ngược chuỗi*** hiện tại.
+```
+public static void main(String args[]) {
+        StringBuffer sb = new StringBuffer("Hello");
+        sb.reverse();
+        System.out.println(sb);
+    }
+===========
+olleH 
+```
+
+* Hàm capacity() của lớp StringBuffer trả về ***dung lượng của bộ nhớ đệm*** </br>
+Phương thức capacity() của lớp StringBuffer trả về dung lượng của bộ nhớ đệm. Dung lượng mặc định của bộ nhớ đệm là 16. Nếu số lượng ký tự của chuỗi tăng lên thì dung lượng được tính theo công thức (dung lượng cũ*2)+2. Ví dụ: Nếu dung lượng hiện tại là 16, nó sẽ tăng lên (16*2)+2=34.
+```
+public static void main(String args[]) {
+        StringBuffer sb = new StringBuffer();
+        System.out.println(sb.capacity());//mặc định là 16 
+        sb.append("Hello");
+        System.out.println(sb.capacity());//đến đây vẫn là 16 
+        sb.append("java is my favourite language");
+        System.out.println(sb.capacity());//đến đây là (16*2)+2=34 i.e (dung lượng cũ*2)+2 
+    }
+```
+
+* Hàm ensureCapacity() đảm bảo rằng dung lượng đã cho là tối thiểu với dung lượng hiện tại.</br>
+
+Phương thức ensureCapacity() của lớp StringBuffer đảm bảo rằng dung lượng đã cho là tối thiểu với dung lượng hiện tại. Nếu nó lớn hơn dung lượng hiện tại, dung lượng hiện tại được tăng theo công thức (dung lượng cũ*2)+2. Ví dụ, dung lượng hiện tại là 16, nó sẽ tăng lên là (16*2)+2=34.
+```
+public static void main(String args[]) {
+        StringBuffer sb = new StringBuffer();
+        System.out.println(sb.capacity());//mặc định là 16 
+        sb.append("Hello");
+        System.out.println(sb.capacity());//đến đây là 16 
+        sb.append("java is my favourite language");
+        System.out.println(sb.capacity());//đến đây là (16*2)+2=34 i.e (dung lượng cũ*2)+2 
+        sb.ensureCapacity(10);//đến đây không có sự thay đổi
+        System.out.println(sb.capacity());//đến đây là 34 
+        sb.ensureCapacity(50);//đến đây là (34*2)+2 
+        System.out.println(sb.capacity());//đến đây là 70 
+    }
+```
