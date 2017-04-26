@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package standarstring;
 
 import java.text.Normalizer;
@@ -15,12 +11,12 @@ import java.util.regex.Pattern;
  * @author admin
  */
 public class StringUtils {
-    public static String removeAccent(String s) {
-            String temp = Normalizer.normalize(s, Normalizer.Form.NFD);
-            Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
-            return pattern.matcher(temp).replaceAll("");
-    }
     
+    /**
+     * viết hoa kí tự đầu
+     * @param input = "trần Trọng HIẾn"
+     * @return "Trần Trọng Hiến"
+     */
     public static String StandarName(String input){
         String result = "";
         input = input.toLowerCase();
@@ -34,5 +30,39 @@ public class StringUtils {
             result = result.substring(0 , result.length()-1);
         }
         return result;
+    }
+    
+    
+    //============== Bỏ dấu ===============
+    /**
+     * 
+     * @param ch = 'Đ' 
+     * @return 'D'
+     * bỏ dấu kí tự và ngăn cách bởi dấu  của chrSeparator
+     * 
+     */
+    public static char removeAccent(char ch, char chrSeparator) {
+        int index = Arrays.binarySearch(SPECIAL_CHARACTERS, ch);
+        if (index > 0) {
+            ch = REPLACEMENTS[index];
+        }else if(index == 0){
+            ch = chrSeparator;
+        }
+        return ch;
+    }
+    public static final char SPACE = ' ';
+    
+    /**
+     * 
+     * @param s = "Trần Trọng Hiến"   chuổi đầu vào 
+     * @param chrSeparator = ' '      dấu phân cách
+     * @return = "Tran Trong Hien"    output
+     */
+    public static String removeAccents(String s, char chrSeparator) {
+        StringBuilder sb = new StringBuilder(s);
+        for (int i = 0; i < sb.length(); i++) {
+            sb.setCharAt(i, removeAccent(sb.charAt(i), chrSeparator));
+        }
+        return sb.toString();
     }
 }
