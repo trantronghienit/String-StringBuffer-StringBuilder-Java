@@ -65,4 +65,14 @@ public class StringUtils {
         }
         return sb.toString();
     }
+    //=================
+    /**
+    * bỏ số trong chuổi
+    */
+    String temp = input.replaceAll("[\\d]", "");
+    
+    /**
+    * chỉ lấy số trong 1 chuổi
+    */
+    String temp = input.replaceAll("[^\\d]", "");
 }
