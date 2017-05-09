@@ -68,18 +68,18 @@ kết quả: hien tran + +
   * trim():
 
 * Hàm __lấy mã ASCII__
- * codePointAt(int index)
- * vd : s.codePointAt(0) trả về 66 (mã ASCII của ‘B’ là 66)
+  * codePointAt(int index)
+  * vd : s.codePointAt(0) trả về 66 (mã ASCII của ‘B’ là 66)
  
 * Hàm __kiểm tra một chuỗi__ có tồn tại trong chuỗi
- * contains(String anotherString)
- * Hàm __kiểm tra__ một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
- * vd : s.contains(“d.vn”) trả về TRUE
+  * contains(String anotherString)
+  * Hàm __kiểm tra__ một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE.
+  * vd : s.contains(“d.vn”) trả về TRUE
 
 * Hàm  __so sánh__ String này với đối tượng Object khác
- * trả về 0 tham số là một chuỗi cân bằng với chuỗi "theo từ điển"
- * trả về một giá trị nhỏ hơn 0 nếu tham số là một chuỗi lớn hơn "theo từ điển"
- * một giá trị lớn hơn 0 nếu tham số là một chuỗi "theo từ điển". 
+  * trả về 0 tham số là một chuỗi cân bằng với chuỗi "theo từ điển"
+  * trả về một giá trị nhỏ hơn 0 nếu tham số là một chuỗi lớn hơn "theo từ điển"
+  * một giá trị lớn hơn 0 nếu tham số là một chuỗi "theo từ điển". 
 ``` 
 int compareTo(Object đối tượng cần so sánh)
 or
@@ -107,8 +107,8 @@ System.out.println(w);
 }}  
 ```
 * Hàm __So Sánh Chuỗi__
- * public boolean equals(Object đối tượng cần so sánh)
- * public boolean equalsIgnoreCase(String đối tượng cần so sánh)  // không phân biệt chữ thường chữ hoa
+  * public boolean equals(Object đối tượng cần so sánh)
+  * public boolean equalsIgnoreCase(String đối tượng cần so sánh)  // không phân biệt chữ thường chữ hoa
 
 * Hàm __trả về một chuỗi mới__ mà là một chuỗi phụ của chuỗi này
 ```
@@ -131,8 +131,8 @@ in
 ienTran
 ```
 * Hàm trả về giá trị __Hash code__ cho đối tượng 
- * trả về một mã hóa băm (hash code) cho chuỗi này
- * public int hashCode()
+  * trả về một mã hóa băm (hash code) cho chuỗi này
+  * public int hashCode()
 demo :
 ```
 public class Test{
@@ -145,13 +145,13 @@ kết quả :
 hash code 1940674593
 ```
 * Hàm __Chuyển chuỗi __này thành mảng ký tự.
- * char[] toCharArray()
+  * char[] toCharArray()
 * Hàm __Kiểm tra nếu chuỗi này bắt đầu__ với tiền tố quy định
- * 1. boolean startsWith(String prefix)
-   * prefix : tiền tố cần kiểm tra
- * 2. boolean startsWith(String prefix, int toffset)
-   * prefix : tiền tố cần kiểm tra
-   * toffset : bắt đầu một chỉ số xác định
+  * 1. boolean startsWith(String prefix)
+    * prefix : tiền tố cần kiểm tra
+  * 2. boolean startsWith(String prefix, int toffset)
+    * prefix : tiền tố cần kiểm tra
+    * toffset : bắt đầu một chỉ số xác định
    
 
 code demo:
@@ -167,8 +167,8 @@ kiem tra true
 
 ```
 * Hàm Kiểm Trả xem có đúng với chuẩn định nghĩa không
- * public boolean matches(String regex)
-   * regex : chuẩn định nghĩa
+  * public boolean matches(String regex)
+    * regex : chuẩn định nghĩa
 ```
 	String chuoi = "Tran Trong Hien";
         System.out.println("" + chuoi.matches("(.*)Trong(.*)")); 
@@ -179,8 +179,8 @@ kiem tra true
 	false
 ```   
 * ***Tìm Index(vị trí)*** của 1 kí tự 1 chuổi
- * int indexOf(String str)
- * int indexOf(String str, int fromIndex)
+  * int indexOf(String str)
+  * int indexOf(String str, int fromIndex)
  	* trường hớp nếu tìm không thấy trả về -1 
   * ví du:
 ```
@@ -277,7 +277,7 @@ Như ta đã biết đối tượng String là không thể thay đổi Nhưng S
 ### khi nào nên dùng ?
 * Khi bạn thực hiện nối nhiều chuỗi thì lớp StringBuffer xử lý nhanh và tốn ít bộ nhớ hơn.
 
-### * Tại sao vậy?
+### Tại sao vậy?
 hai lớp trên đều thuộc lọai mutable(có thể thay đổi được) Nhờ đặc tính này mà khi thay đổi các chuỗi trong những đối tượng này JVM __không phải tạo các đối tượng mới (đối tượng tạm)__ và vấn đề về performance.
 
 ### vậy StringBuffer và String builder khác gì nhau ?
